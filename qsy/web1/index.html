@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title></title>
+	<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+	<script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./assets/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/style/tool.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/style/index.css" />
+	
+	<style>
+		/* tool */
+
+		.bg-white {
+			background-color: #fff;
+		}
+
+		.bg-black {
+			background-color: #000;
+		}
+
+		.bg-blue {
+			background-color: #0071FF;
+		}
+
+		.bg-black {
+			background-color: #eee;
+		}
+
+		.bg-blue {
+			background-color: #999;
+		}
+
+		.text-white {
+			color: #fff;
+		}
+
+		.text-black {
+			color: #000;
+		}
+
+		.text-blue {
+			color: #0071FF;
+		}
+
+		.text-grey {
+			color: #eee;
+		}
+
+		.text-dark {
+			color: #999;
+		}
+
+		/*20*/
+		.fs-xxxs {
+			font-size: 2.6667vw;
+		}
+
+		/* 24 */
+		.fs-xxs {
+			font-size: 3.2vw;
+		}
+
+		/* 26 */
+		.fs-xs {
+			font-size: 3.4667vw;
+		}
+
+		/* 28 */
+		.fs-sm {
+			font-size: 3.7333vw;
+		}
+
+		/* 30 */
+		.fs-md {
+			font-size: 4vw;
+		}
+
+		/*32*/
+		.fs-lg {
+			font-size: 4.2667vw;
+		}
+
+		/*36*/
+		.fs-xl {
+			font-size: 4.8vw;
+		}
+
+		/* 60 */
+		.fs-xxl {
+			font-size: 8vw;
+		}
+
+		.d-flex {
+			display: flex;
+		}
+
+		.flex-1 {
+			flex: 1;
+		}
+
+		.flex-col {
+			flex-direction: column;
+		}
+
+		.jc-start {
+			justify-content: start;
+		}
+
+		.jc-center {
+			justify-content: center;
+		}
+
+		.jc-end {
+			justify-content: end;
+		}
+
+		.jc-around {
+			justify-content: space-around;
+		}
+
+		.jc-between {
+			justify-content: space-between;
+		}
+
+
+		.ai-start {
+			align-items: start;
+		}
+
+		.ai-center {
+			align-items: center;
+		}
+
+		.ai-end {
+			align-items: end;
+		}
+
+		/* all */
+		body {
+			all: unset;
+			margin: 0;
+			padding: 0;
+			font-size: 4vw;
+		}
+
+		/* - Chrome ≤56,
+   - Safari 5-10.0
+   - iOS Safari 4.2-10.2
+   - Opera 15-43
+   - Opera Mobile >12
+   - Android Browser 2.1-4.4.4
+   - Samsung Internet
+   - UC Browser for Android
+   - QQ Browser */
+		::-webkit-input-placeholder {
+			color: #eee;
+		}
+
+		/* Firefox 4-18 */
+		:-moz-placeholder {
+			color: #eee;
+		}
+
+		/* Firefox 19-50 */
+		::-moz-placeholder {
+			color: #eee;
+		}
+
+		/* - Internet Explorer 10–11
+   - Internet Explorer Mobile 10-11 */
+		:-ms-input-placeholder {
+			color: #eee !important;
+		}
+
+		/* Edge (also supports ::-webkit-input-placeholder) */
+		::-ms-input-placeholder {
+			color: #eee;
+		}
+
+		/* CSS Working Draft */
+		::placeholder {
+			color: #eee;
+		}
+
+		/* scope */
+		#app {
+			width: 100vw;
+			height: 780.2667vw;
+			background-size: 100% auto;
+		}
+
+		.header {
+			padding: 7.3333vw 0;
+		}
+
+		.header .logo {
+			width: 24.1333vw;
+			height: 5.8667vw;
+		}
+
+		.header .title {
+			margin-top: 3.4667vw;
+			margin-bottom: 2.8vw;
+		}
+
+		.header .btn-y {
+			width: 71.7333vw;
+			height: 9.0667vw;
+			background-size: 71.7333vw 9.0667vw;
+			text-align: center;
+			line-height: 9.0667vw;
+			letter-spacing: 0.5333vw;
+		}
+
+		.header .nav {
+			width: 53.6vw;
+			font-size: 2.6667vw;
+			height: 3.8667vw;
+			margin-top: 1.5vw;
+		}
+
+		.header .nav .nav-item .nav-item-content {
+			padding: 0 0.5333vw;
+			/* border-right: 0.1333vw solid #fff; */
+		}
+
+		/* .header .nav .nav-item .nav-item-content:last-child{	
+			border-right: 0vw;
+		} */
+		.header .btn-w {
+			width: 47.4667vw;
+			height: 12vw;
+			background-size: 47.4667vw 12vw;
+			text-align: center;
+			line-height: 12vw;
+			margin-top: 80vw;
+		}
+
+		/* end of header */
+		.card {
+			margin: 6vw 4.9333vw 5.0667vw 3.2vw;
+			padding: 9.3333vw 4.6667vw 5.0667vw 4.2667vw;
+			border-radius: 1.3333vw;
+		}
+
+		.card .card-header {
+			font-weight: bolder;
+		}
+
+		.card .card-header .left-icon,
+		.card .card-header .right-icon {
+			width: 4.2667vw;
+			height: 1.2vw;
+			margin: 0 4vw;
+		}
+
+		/* end of card */
+		.card-content .card-content-title {
+			font-size: 3.7333vw;
+			margin-top: 2.5333vw;
+		}
+
+		.card-content .form .form-item {
+			width: 80vw;
+		}
+
+		.card-content .form .form-item input,
+		.card-content .form .form-item button {
+			border-radius: 1.3333vw;
+			margin: 2.6667vw 1.3333vw;
+		}
+
+		.card-content .form .form-item input {
+			padding: 3.7333vw 4.4vw;
+			border-color: #eee;
+		}
+
+		.card-content .form .form-item button {
+			/* letter-spacing: 0.4vw; */
+			/* padding: 3.7333vw 4.4vw; */
+			border: 0;
+		}
+
+		.card-content .form .form-item .fs-md {
+			font-weight: bold;
+		}
+
+		.card-content .ad {
+			padding: 2.6667vw 0;
+			margin: 2.6667vw;
+			border-radius: 1.3333vw;
+		}
+
+		/* end of card1 card5 */
+		.card-content .img-cards {
+			flex-wrap: wrap;
+			margin: 5.0667vw 0;
+		}
+
+		.card-content .img-cards .img-card {
+			width: 37.8667vw;
+			height: 44.8vw;
+			background-size: 37.8667vw 44.8vw;
+			margin: 1.5vw;
+			border: 0.1333vw dashed #000;
+		}
+
+		.card-content .img-cards .img-card .card-txt {
+			margin: 26.6667vw 2.9333vw 9.3333vw 4vw;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 0.1333vw;
+		}
+
+		.card-content .contact-btn {
+			margin: 0 2vw;
+			font-size: 4vw;
+			padding: 3.4667vw 0;
+			letter-spacing: 0.4vw;
+			border-radius: 1.3333vw;
+			border: 0;
+		}
+
+		/* end of card1 card5 */
+		.card-content .img-cards {
+			flex-wrap: wrap;
+			margin: 5.0667vw 0;
+		}
+
+		.card-content .img-cards .img-card {
+			width: 37.8667vw;
+			height: 44.8vw;
+			background-size: 37.8667vw 44.8vw;
+			margin: 1.5vw;
+			border: 0.1333vw dashed #000;
+		}
+
+		.card-content .img-cards .img-card .card-txt {
+			margin: 26.6667vw 2.9333vw 9.3333vw 4vw;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 0.1333vw;
+		}
+
+		.card-content .contact-btn {
+			margin: 0 2vw;
+			font-size: 4vw;
+			padding: 3.4667vw 0;
+			letter-spacing: 0.4vw;
+			border-radius: 1.3333vw;
+			border: 0;
+		}
+
+		/* end of card2 */
+		.card-content .content-steps {
+			margin: 7.4667vw 0 3.3333vw 0;
+		}
+
+		.card-content .content-steps .left {
+			text-align: right;
+			margin-bottom: 20vw;
+		}
+
+		.card-content .content-steps .step-icon {
+			width: 4vw;
+			height: 88.2667vw;
+			margin: 0 3.8667vw 0 3.7333vw;
+		}
+
+		.card-content .content-steps .right {
+			text-align: left;
+			margin-top: 10vw;
+			margin-bottom: 10vw;
+		}
+
+		/* end of card3 */
+		.card-content .content-projects {
+			flex-wrap: wrap;
+			margin: 6.8vw 0 0.1333vw 0;
+		}
+
+		.card-content .content-projects .content-project {
+			margin: 5.8667vw 0.72vw;
+			text-align: center;
+			max-width: 26.6667vw;
+		}
+
+		.content-project .content-project-item .project-img {
+			border: 0.1333vw dashed #000;
+			width: 24.9333vw;
+			height: 42.5333vw;
+		}
+
+		.content-project .content-project-item .project-title {
+			font-weight: bold;
+			margin-bottom: 2.2667vw;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.content-project .content-project-item .project-title .left-icon,
+		.content-project .content-project-item .project-title .right-icon {
+			margin: 0 1vw;
+		}
+
+		.content-project .content-project-item .project-industry,
+		.content-project .content-project-item .project-type,
+		.content-project .content-project-item .project-range {
+			color: #363B57;
+			line-height: 3.3333vw;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		/* end of card4 */
+		.footer {
+			position: fixed;
+			bottom: 0vw;
+			padding: 1.8667vw 4vw;
+			width: 90vw;
+			opacity: 1;
+			z-index: 99;
+		}
+
+		.footer .contact-icon {
+			width: 6.4vw;
+			height: 6.4vw;
+			margin: 0 10px;
+		}
+
+		.footer .contact-title {
+			margin-left: 20px;
+			font-weight: bolder;
+		}
+
+		.footer .contact-btn {
+			border-radius: 6.6667vw;
+			letter-spacing: 0.4vw;
+			padding: 2.6667vw 7.0667vw;
+			border: 0;
+		}
+
+		/* end of footer */
+	</style>
+</head>
+
+<body>
+	<div id="app" style="background-image: url('./assets/img/图层\ 22@2x.png');">
+		<div class="header d-flex flex-col ai-center text-white">
+			<img class="logo" src="./assets/img/资源 26@2x.png" />
+			<div class="title fs-xxl">小程序/APP开发</div>
+			<div class="btn-y" style="background-image: url('./assets/img/圆角矩形 584@2x.png');">一站式服务 BUG终身免费修复</div>
+			<div class="nav d-flex jc-around">
+				<div class="nav-item" v-for="(item,i) in navs" :key="i">
+					<div class="nav-item-content">{{item.title}}</div>
+				</div>
+			</div>
+			<div class="btn-w text-blue" style="background-image: url('./assets/img/圆角矩形 1@2x.png');">免费获取方案报价</div>
+		</div>
+		<!-- end of header -->
+		<div class="card bg-white">
+			<div class="card-header d-flex jc-center ai-center fs-xl">
+				<img class="left-icon" src="./assets/img/圆角矩形 2@2x.png"></img>
+				<div class="card-header-title">立即在线免费定制</div>
+				<img class="right-icon" src="./assets/img/圆角矩形 2 拷贝@2x.png"></img>
+			</div>
+			<div class="card-content d-flex flex-col">
+				<div class="card-content-title">小程序/APP开发方案</div>
+				<div class="form d-flex flex-col ai-center">
+					<div class="form-item d-flex">
+						<input class="flex-1 fs-xxs text-grey" type="text" placeholder="请输入您的姓名">
+					</div>
+					<div class="form-item d-flex">
+						<input class="flex-1 fs-xxs text-grey" type="text" placeholder="请输入手机号码">
+					</div>
+					<div class="form-item d-flex">
+						<input class="flex-1 fs-xxs text-grey" type="text" placeholder="请输入验证码">
+						<button class="flex-1 fs-xxs text-white bg-blue" type="btn">获取验证码</button>
+					</div>
+					<div class="form-item d-flex">
+						<button type="btn" class="fs-md  text-white bg-blue line-button">立即获取</button>
+					</div>
+				</div>
+				<div class="ad d-flex jc-around bg-grey text-dark fs-xxxs">
+					<img class="ad-icon" src="./assets/img/形状 541@2x.png"></img>
+					<div class="ad-name">李**</div>
+					<div class="ad-phone">133******78</div>
+					<div class="ad-address">广东广州</div>
+				</div>
+			</div>
+		</div>
+		<!-- end of card1 -->
+		<div class="card bg-white">
+			<div class="card-header d-flex jc-center ai-center fs-xl">
+				<img class="left-icon" src="./assets/img/圆角矩形 2@2x.png"></img>
+				<div class="card-header-title">立即在线免费定制</div>
+				<img class="right-icon" src="./assets/img/圆角矩形 2 拷贝@2x.png"></img>
+			</div>
+			<div class="card-content d-flex flex-col">
+				<div class="img-cards d-flex">
+					<div class="img-card" style="background-image: url('./assets/img/组 28@2x.png');">
+						<div class="card-txt fs-lg">近16年在SAAS领域的深耕</div>
+					</div>
+					<div class="img-card" style="background-image: url('./assets/img/组 28@2x(1).png');">
+						<div class="card-txt fs-lg">解决方案触达超20个行业</div>
+					</div>
+					<div class="img-card" style="background-image: url('./assets/img/组 28@2x(2).png');">
+						<div class="card-txt fs-lg">长期服务10000+客户</div>
+					</div>
+					<div class="img-card" style="background-image: url('./assets/img/组 28@2x(3).png');">
+						<div class="card-txt fs-lg">超30000+客户信赖之选</div>
+					</div>
+				</div>
+				<button class="contact-btn text-blue flex-1 bg-blue text-white fs-md">立刻在线咨询</button>
+			</div>
+		</div>
+		<!-- end of card2 -->
+		<div class="card bg-white">
+			<div class="card-header d-flex jc-center ai-center fs-xl">
+				<div class="card-header">
+					<img class="left-icon" src="./assets/img/圆角矩形 2@2x.png"></img>
+					<div class="card-header-title">一站式小程序/APP开发 拒绝外包</div>
+					<img class="right-icon" src="./assets/img/圆角矩形 2 拷贝@2x.png"></img>
+				</div>
+			</div>
+			<div class="card-content d-flex flex-col">
+				<div class="card-content-title">服务有保障 用户更放心</div>
+				<div class="content-steps d-flex fs-md">
+					<div class="left flex-1 d-flex flex-col jc-between">
+						<div class="left-4" v-for="(item,i) in step_single" :key="i">
+							<div class="left-item">
+								<div class="left-item-content">{{item.name}}</div>
+							</div>
+						</div>
+					</div>
+					<img class="step-icon" src="./assets/img/组 28@2x(4).png"></img>
+					<div class="right flex-1 d-flex flex-col jc-between">
+						<div class="right-4" v-for="(item,i) in step_double" :key="i">
+							<div class="right-item">
+								<div class="right-item-content">{{item.name}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="contact-btn text-white bg-blue fs-md">立刻咨询定制</button>
+			</div>
+		</div>
+		<!-- end of card3 -->
+		<div class="card bg-white">
+			<div class="card-header d-flex jc-center ai-center fs-xl">
+				<img class="left-icon" src="./assets/img/圆角矩形 2@2x.png"></img>
+				<div class="card-header-title">项目案例</div>
+				<img class="right-icon" src="./assets/img/圆角矩形 2 拷贝@2x.png"></img>
+			</div>
+			<div class="card-content d-flex flex-col">
+				<div class="content-projects d-flex">
+					<div class="content-project" v-for="(item,i) in projects" :key="i">
+						<div class="content-project-item">
+							<img class="project-img" :src="item.img"></img>
+							<div class="project-title d-flex jc-center ai-center fs-xxs">
+								<img class="left-icon" src="./assets/img/形状 3@2x.png"></img>
+								<div class="title-txt">{{item.name}}</div>
+								<img class="left-icon" src="./assets/img/形状 3 拷贝@2x.png"></img>
+							</div>
+							<div class="project-industry fs-xxxs">行业:{{item.industry}}</div>
+							<div class="project-type fs-xxxs">类型:{{item.type}}</div>
+							<div class="project-range fs-xxxs">范围:{{item.range}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end of card4 -->
+		<div class="footer d-flex ai-center bg-white">
+			<img class="contact-icon" src="./assets/img/组 27@2x.png"></img>
+			<div class="contact-title text-blue flex-1">在线咨询</div>
+			<button class="contact-btn bg-blue text-white fs-md">免费获取开发报价</button>
+		</div>
+	</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				navs: [
+					{ title: '社交电商' },
+					{ title: '社区团购' },
+					{ title: '连锁加盟' },
+				],
+				steps: [
+					{ name: '交流沟通' },
+					{ name: '定制方案' },
+					{ name: '签订协议' },
+					{ name: '项目开发' },
+					{ name: '产品测试' },
+					{ name: '完成验收' },
+					{ name: '技术培训' },
+					{ name: '后期维护' },
+				],
+				projects: [
+					{
+						name: '阳光医美',
+						industry: '医美',
+						type: '线上营销拓客',
+						range: '医美连锁小程序',
+						img: './assets/img/img1.png'
+					},
+					{
+						name: '耐力康',
+						industry: '大健康',
+						type: '大健康产品营销',
+						range: 'AI智能体测小程序',
+						img: './assets/img/img2.png'
+					},
+					{
+						name: '珠影艺术教育',
+						industry: '教育',
+						type: '在线教育',
+						range: '在线教育小程序',
+						img: './assets/img/img3.png'
+					},
+					{
+						name: '蕃薯藤',
+						industry: '生鲜',
+						type: '社区团购平台',
+						range: '团购小程序',
+						img: './assets/img/img4.png'
+					},
+					{
+						name: '澳通电缆',
+						industry: '建材',
+						type: '分销裂变',
+						range: '社交电商小程序',
+						img: './assets/img/img5.png'
+					},
+					{
+						name: '七彩南方',
+						industry: '软装饰类',
+						type: '线上AR商城',
+						range: '电商小程序',
+						img: './assets/img/img6.png'
+					},
+				]
+			},
+			computed: {
+				step_single() {
+					let single = []
+					for (let i = 0; i < this.steps.length; i++) {
+						if (i % 2 != 0) single.push(this.steps[i])
+					}
+					return single;
+				},
+				step_double() {
+					let double = []
+					for (let i = 0; i < this.steps.length; i++) {
+						if (i % 2 == 0) double.push(this.steps[i])
+					}
+					return double;
+				}
+			},
+			methods: {}
+		})
+	</script>
+</body>
+
+</html>

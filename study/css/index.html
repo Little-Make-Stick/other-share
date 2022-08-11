@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1"
+		/>
+		<title>Hello CSS</title>
+		<link rel="stylesheet" href="./reset.css" />
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+
+	<body class="flex-ct-x">
+		<!-- ... -->
+		<!-- <div class="three-column-layout">
+			<div class="left"></div>
+			<div class="center"></div>
+			<div class="right"></div>
+    </div> -->
+		<!-- <div class="grail-layout-x">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="center"></div>
+    </div> -->
+		<!-- <ul id="ulid" class="gradient-circular" style="--line-count: 360"> -->
+		<!-- <li style="--line-index: 1"></li>
+			...
+			<li style="--line-index: 360"></li> -->
+		<!-- 360个<li>，可用模板语法生成  -->
+		<!-- </ul> -->
+		<!-- 渐变爱心效果 -->
+		<!-- <div class="gradient-heart-shape"></div> -->
+		<!-- 鼠标悬浮提示文案 -->
+		<!-- <ul class="hover-tips">
+			<li data-name="姨妈红"></li>
+			<li data-name="基佬紫"></li>
+			<li data-name="箩底橙"></li>
+			<li data-name="姣婆蓝"></li>
+			<li data-name="大粪青"></li>
+			<li data-name="原谅绿"></li>
+		</ul> -->
+		<!-- css标签导航 -->
+		<div class="tab-navbar">
+			<input id="tab1" type="radio" name="tabs" hidden checked />
+			<input id="tab2" type="radio" name="tabs" hidden />
+			<input id="tab3" type="radio" name="tabs" hidden />
+			<input id="tab4" type="radio" name="tabs" hidden />
+			<nav>
+				<label for="tab1">标题1</label>
+				<label for="tab2">标题2</label>
+				<label for="tab3">标题3</label>
+				<label for="tab4">标题4</label>
+			</nav>
+			<main>
+				<ul>
+					<li>内容1</li>
+					<li>内容2</li>
+					<li>内容3</li>
+					<li>内容4</li>
+				</ul>
+			</main>
+		</div>
+	</body>
+</html>
+<!-- 生成360个li -->
+<!-- <script>
+	var ul = document.getElementById('ulid')
+	var lilist = ul.getElementsByTagName('li')
+	var str = ''
+	for (var i = 0; i < 360; i++) {
+		str += '<li>' + '</li>'
+	}
+	ul.innerHTML = str
+	for (var i = 0; i < lilist.length; i++) {
+		// lilist[i].style = `--line-index: ${i+1}` 两种都可
+		lilist[i].style = '--line-index:' + (i + 1)
+	}
+</script> -->

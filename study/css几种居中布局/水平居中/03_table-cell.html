@@ -1,0 +1,21 @@
+<!-- 父元素控制子元素水平居中，不需要知道元素宽高 -->
+<div class="father">
+	<span class="son">123</span>
+	<span class="son">456</span>
+</div>
+<style>
+	.father {
+		/*子元素成为表格单元格（类似 <td> 和 <th>）*/
+		display: table-cell;
+		text-align: center;
+		width: 300px;
+		height: 300px;
+		border: 3px solid red;
+	}
+	.son {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		background-color: aqua;
+	}
+</style>

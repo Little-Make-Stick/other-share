@@ -1,0 +1,38 @@
+<main>
+	<header>标题一</header>
+	<div class="content"></div>
+	<header>标题二</header>
+	<div class="content"></div>
+	<header>标题三</header>
+	<div class="content"></div>
+	<header>标题四</header>
+	<div class="content"></div>
+</main>
+<style>
+	main {
+		width: 400px;
+		height: 300px;
+		margin: 200px auto;
+		overflow: auto;
+	}
+	header {
+		position: -webkit-sticky; /* safari 浏览器 */
+		position: sticky; /* 其他浏览器 */
+		/* sticky必须设在<th>元素上面，不能设在<thead>和<tr>元素，因为这两个元素没有relative定位，也就无法产生sticky效果。 */
+		top: 0;
+		height: 30px;
+		background-color: blanchedalmond;
+	}
+</style>
+<script>
+	let num = 5
+	let html = ''
+	for (var i = 0; i < num; i++) {
+		html += `<p>${i + 1}</p>`
+	}
+	Array.prototype.slice
+		.call(document.getElementsByClassName('content'))
+		.forEach(item => {
+			item.innerHTML = html
+		})
+</script>

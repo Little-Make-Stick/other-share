@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <script src="https://unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" type="text/css" href="./src/components/swiper-4.5.3/dist/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
+
+    <!-- Swiper JS -->
+    <script src="./src/components/swiper-4.5.3/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"> </script>
+    <!-- <script src="./src/components/swiper-4.5.3/package.js"> </script> -->
+    <script></script>
+    <style></style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./assets/img/iPhone@3x(1).png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/img/iPhone@3x.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/img/iPhone@3x(2).png">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+
+            }
+        });
+        var swiper = new Swiper('.swiper-container', {
+            direction: "horizontal",
+            loop: true,
+            slidesPerView: 2,
+            centeredSlides: true,
+            // slidesPerView: "auto",
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // var swiper = new Swiper('.swiper-container', {
+        //     lazy: true,
+        //     slidesPerView: 3,
+        //     spaceBetween: 30,
+        //     centeredSlides: true,
+        //     loop: true,
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //         clickable: true,
+        //     },
+        //     // 如果需要前进后退按钮
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        // });
+    </script>
+</body>
+
+</html>

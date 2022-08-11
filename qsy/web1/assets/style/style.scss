@@ -1,0 +1,51 @@
+html{
+    body{
+        all: unset;
+        margin: 0;
+        padding: 0;
+        font-size: 1.875rem;  //30px
+    }
+}
+@import url('../style/_variable.scss');
+
+@each $key,$value in $colors {
+    .bg-#{$key}{
+        background-color: $value;
+    }
+    .text-#{$key}{
+        color: $value;
+    }
+};
+
+
+
+@each $key,$value in $sizes {
+    .fs-#{$key}{
+        font-size: $value;
+    }
+};
+
+.d-flex{
+    display: flex;
+}
+
+.flex-1{
+    flex: 1;
+}
+.flex-col{
+    flex-direction: column;
+}
+
+@each $key,$value in $jc {
+    .jc-#{$key}{
+        justify-content: $value;
+    }
+};
+
+
+
+@each $key,$value in $ai {
+    .ai-#{$key}{
+        align-items: $value;
+    }
+};

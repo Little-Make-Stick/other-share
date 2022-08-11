@@ -1,0 +1,20 @@
+<div class="father">
+	<div class="son"></div>
+</div>
+<style>
+	.father {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		border: 3px solid red;
+	}
+	.son {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background-color: aqua;
+		top: 50%;
+		/* 负margin须是高度的一半 */
+		margin-top: -50px;
+	}
+</style>

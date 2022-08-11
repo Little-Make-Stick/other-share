@@ -1,0 +1,46 @@
+/* 公共类 */
+body{
+    all: unset;
+    margin: 0;
+    padding: 0;
+    font-size: 1.875rem;  /*30px*/
+}
+
+/* - Chrome ≤56,
+   - Safari 5-10.0
+   - iOS Safari 4.2-10.2
+   - Opera 15-43
+   - Opera Mobile >12
+   - Android Browser 2.1-4.4.4
+   - Samsung Internet
+   - UC Browser for Android
+   - QQ Browser */
+   ::-webkit-input-placeholder {
+    color: #eee;
+}
+
+/* Firefox 4-18 */
+:-moz-placeholder {
+    color: #eee;
+}
+
+/* Firefox 19-50 */
+::-moz-placeholder {
+    color: #eee;
+}
+
+/* - Internet Explorer 10–11
+- Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+    color: #eee !important;
+}
+
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+    color: #eee;
+}
+
+/* CSS Working Draft */
+::placeholder {
+    color: #eee;
+}

@@ -1,0 +1,20 @@
+<div class="father">
+	<div class="son"></div>
+</div>
+<style>
+	.father {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		border: 3px solid red;
+	}
+	.son {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background-color: aqua;
+    /* calc()函数，动态计算长度值 */
+		/* 注意"-"两边要隔开 减去的须是宽度或高度的一半*/
+		left: calc(50% - 50px);
+	}
+</style>

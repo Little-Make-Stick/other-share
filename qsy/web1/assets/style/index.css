@@ -1,0 +1,202 @@
+
+		#app {
+			width: 100vw;
+			height: 780.2667vw;
+			background-size: 100% auto;
+		}
+
+		.header {
+			padding: 7.3333vw 0;
+		}
+
+		.header .logo {
+			width: 24.1333vw;
+			height: 5.8667vw;
+		}
+		.header .title {
+			margin-top: 3.4667vw;
+			margin-bottom: 2.8vw;
+		}
+
+		.header .btn-y {
+			width: 71.7333vw;
+			height: 9.0667vw;
+			background-size: 71.7333vw 9.0667vw;
+			text-align: center;
+			line-height: 9.0667vw;
+			letter-spacing: 0.5333vw;
+		}
+		.header .nav {
+			width: 53.6vw;
+			font-size: 2.6667vw;
+			height: 3.8667vw;
+			margin-top: 1.5vw;
+		}
+
+		.header .nav .nav-item .nav-item-content {
+			padding: 0 0.5333vw;
+			/* border-right: 0.1333vw solid #fff; */
+		}
+
+		/* .header .nav .nav-item .nav-item-content:last-child{	
+			border-right: 0vw;
+		} */
+		.header .btn-w {
+			width: 47.4667vw;
+			height: 12vw;
+			background-size: 47.4667vw 12vw;
+			text-align: center;
+			line-height: 12vw;
+			margin-top: 80vw;
+		}
+		/* end of header */
+		.card {
+			margin: 6vw 4.9333vw 5.0667vw 3.2vw;
+			padding: 9.3333vw 4.6667vw 5.0667vw 4.2667vw;
+			border-radius: 1.3333vw;
+		}
+		.card .card-header {
+			font-weight: bolder;
+		}
+
+		.card .card-header .left-icon,
+		.card .card-header .right-icon {
+			width: 4.2667vw;
+			height: 1.2vw;
+			margin: 0 4vw;
+		}
+		/* end of card */
+		.card-content .card-content-title{
+			font-size: 3.7333vw;
+			margin-top: 2.5333vw;
+		}
+		.card-content .form .form-item{
+			width: 80vw;
+		}
+		.card-content .form .form-item input,
+		.card-content .form .form-item button{
+			border-radius: 1.3333vw;
+			margin: 2.6667vw 1.3333vw;
+		}
+		.card-content .form .form-item input{
+			padding: 3.7333vw 4.4vw;
+			border-color: #eee;
+		}
+		.card-content .form .form-item button{
+			letter-spacing: 0.4vw;
+			/* padding: 3.7333vw 4.4vw; */
+			border: 0;
+		}
+
+		.card-content .form .form-item button.line-button{
+			letter-spacing: 0.4vw;
+			padding: 3.7333vw 4.4vw;
+			width: 100%;
+			border: 0;
+		}
+
+		.card-content .form .form-item .fs-md{
+			font-weight: bold;
+		}
+		.card-content .ad{
+			padding: 2.6667vw 0;
+			margin: 2.6667vw;
+			border-radius: 1.3333vw;
+		}
+		/* end of card1 card5 */
+		.card-content .img-cards{
+			flex-wrap: wrap;
+			margin: 5.0667vw 0;
+		}
+		.card-content .img-cards .img-card{
+			width: 37.8667vw;
+			height: 44.8vw;
+			background-size: 37.8667vw 44.8vw;
+			margin: 1.5vw;
+			border: 0.1333vw dashed #000;
+		}
+		.card-content .img-cards .img-card .card-txt{
+			margin: 26.6667vw 2.9333vw 9.3333vw 4vw;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 0.1333vw;
+		}
+		.card-content .contact-btn{
+			margin: 0 2vw;
+			font-size: 4vw;
+			padding: 3.4667vw 0;
+			letter-spacing: 0.4vw;
+			border-radius: 1.3333vw;
+			border: 0;
+		}
+		/* end of card2 */
+		.card-content .content-steps{
+			margin: 7.4667vw 0 3.3333vw 0;
+		}
+		.card-content .content-steps .left{
+			text-align: right;
+			margin-bottom: 20vw;
+		}
+		.card-content .content-steps .step-icon{
+			width: 4vw;
+			height: 88.2667vw;
+			margin: 0 3.8667vw 0 3.7333vw;
+		}
+		.card-content .content-steps .right{
+			text-align: left;
+			margin-top: 10vw;
+			margin-bottom: 10vw;
+		}
+		/* end of card3 */
+		.card-content .content-projects{
+			flex-wrap: wrap;
+			margin: 6.8vw 0 0.1333vw 0;
+		}
+		.card-content .content-projects .content-project{
+			margin: 5.8667vw 0.72vw;
+			text-align: center;
+		}
+		.content-project .content-project-item .project-img{
+			border: 0.1333vw dashed #000;
+			width: 24.9333vw;
+			height: 42.5333vw;
+        }
+		.content-project .content-project-item .project-title{
+			font-weight: bold;
+			margin-bottom: 2.2667vw;
+		}
+		.content-project .content-project-item .project-title .left-icon,
+		.content-project .content-project-item .project-title .right-icon{
+			margin: 0 1.3333vw;
+		}
+		.content-project .content-project-item .project-industry,
+		.content-project .content-project-item .project-type,
+		.content-project .content-project-item .project-range{
+			color: #363B57;
+			line-height: 3.3333vw;
+		}
+		/* end of card4 */
+		.footer{
+			position: fixed;
+			bottom: 0vw;
+			padding: 1.8667vw 4vw;
+			width: 90vw;
+			opacity: 1;
+			z-index: 99;
+		}
+		.footer .contact-icon{
+			width: 6.4vw;
+			height: 6.4vw;
+			margin: 0 10px;
+		}
+		.footer .contact-title{
+			margin-left: 20px;
+			font-weight: bolder;
+		}
+		.footer .contact-btn{
+			border-radius: 6.6667vw;
+			letter-spacing: 0.4vw;
+			padding: 2.6667vw 7.0667vw;
+			border: 0;
+		}
+		/* end of footer */

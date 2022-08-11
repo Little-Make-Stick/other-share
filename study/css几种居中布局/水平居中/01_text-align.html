@@ -1,0 +1,19 @@
+<!-- 块级容器包裹行内元素，行内元素水平居中，不需要知道元素宽高 -->
+<div class="father">
+  <span class="son">123</span>
+  <span class="son">456</span>
+</div>
+<style>
+	.father {
+		text-align: center;
+		width: 300px;
+		height: 300px;
+		border: 3px solid red;
+	}
+	.son {
+		width: 100px;
+		height: 100px;
+		background-color: aqua;
+		display: inline-block;
+	}
+</style>

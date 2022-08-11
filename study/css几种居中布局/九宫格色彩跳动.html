@@ -1,0 +1,103 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>九宫格跳转</title>
+		<style type="text/css">
+			/* 外部包裹的大盒子 */
+			.main-box {
+				width: 300px;
+				height: 300px;
+				background-color: #fefefe;
+				margin: 200px auto 0;
+			}
+			/*九个小格子*/
+			.item-box {
+				width: 90px;
+				height: 90px;
+				background-color: #ffa600;
+				float: left;
+				margin: 5px;
+				border-radius: 8px;
+			}
+			/*开始，结束按钮盒子*/
+			.btn-box {
+				width: 300px;
+				height: 40px;
+				line-height: 40px;
+				color: #ffa600;
+				background-color: #fefefe;
+				border: 2px solid #ffa600;
+				border-radius: 8px;
+				margin: 10px auto 0;
+				text-align: center;
+			}
+			.btn-box:hover {
+				color: #fefefe;
+				background-color: #ffa600;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main-box">
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+			<div class="item-box"></div>
+		</div>
+		<div class="btn-box" onclick="startBtn()">开始闪</div>
+		<div class="btn-box" onclick="stopBtn()">结束闪</div>
+		<script type="text/javascript">
+			//实现颜色随机变化
+			var getRandomColor = function () {
+				return '#' + Math.floor(Math.random() * 16777215).toString(16)
+			}
+			function getRandom(randomArray) {
+				//确保这三个数不重复
+				var tempIndex = Math.floor(Math.random() * 10)
+				if (randomArray.indexOf(tempIndex) == -1) {
+					return tempIndex < 9 ? tempIndex : tempIndex - 8
+				} else {
+					return Math.floor(Math.random() * 10)
+				}
+			}
+			//定义计时器
+			var interval
+			function startBtn() {
+				console.log('开始跳动了')
+				//计时，1s变换一次
+				interval = setInterval(() => {
+					var randomArray = []
+					var index0 = getRandom(randomArray)
+					randomArray.push(index0)
+					var index1 = getRandom(randomArray)
+					randomArray.push(index1)
+					var index2 = getRandom(randomArray)
+					randomArray.push(index2)
+					//修改选中的为随机颜色，其他为默认颜色
+					for (var i = 0; i < 9; i++) {
+						if (randomArray.indexOf(i) == -1) {
+							document.getElementsByClassName('item-box')[
+								i
+							].style.backgroundColor = '#FFA600'
+						} else {
+							document.getElementsByClassName('item-box')[
+								i
+							].style.backgroundColor = getRandomColor()
+						}
+					}
+				}, 1000)
+			}
+			function stopBtn() {
+				console.log('结束跳动了')
+				//取消计时器
+				clearInterval(interval)
+			}
+		</script>
+	</body>
+</html>

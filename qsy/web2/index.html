@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/style/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/style/tool.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/style/index.css" />
+
+    <!-- Link Swiper's CSS -->
+    <!-- <link rel="stylesheet" href="./src/components/swiper-4.5.3/dist/css/swiper.min.css"> -->
+
+    <!-- Swiper JS -->
+    <!-- <script src="./src/components/swiper-4.5.3/dist/js/swiper.min.js"> </script>
+    <script src="./src/components/swiper-4.5.3/package.js"> </script> -->
+
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="module-1 d-flex flex-col jc-between" style="background-image: url('./assets/img/矩形 1@3x.png');">
+            <img class="logo" src="./assets/img/资源 26@3x.png"></img>
+            <div class="module1-content text-white-1 w-100 d-flex flex-col ai-center">
+                <div class="module1-content-title fs-xxxl bold">小程序/APP定制开发</div>
+                <div class="module1-content-nav fs-xxxs d-flex">
+                    <div class="nav-item" v-for="(item,i) in navs" :key="i">
+                        <div class="nav-item-content">{{item.name}}</div>
+                    </div>
+                </div>
+                <div class="module1-white-btn text-blue d-flex ai-center jc-center "
+                    style="background-image: url('./assets/img/圆角矩形 1@3x.png');">免费获取方案报价
+                </div>
+            </div>
+        </div>
+        <!-- end of module1 -->
+        <div class="module-2 text-white-1 d-flex flex-col ai-center"
+            style="background-image: url('./assets/img/矩形 1 拷贝@3x.png');">
+            <div class="module2-txt">
+                <div class="module2-txt-row1 fs-md">免费获取价值<span class="text-yellow bold price">¥5899</span></div>
+                <div class="module2-txt-row2 fs-xxxl">定制化落地方案</div>
+                <div class="module2-txt-row3 fs-xxxs">需求梳理+需求方案+价格</div>
+                <div class="module2-txt-row4 d-flex ai-center fs-xs">
+                    <div class="circle-yellow"></div>
+                    <div class="txt">资深技术顾问一对一需求沟通</div>
+                </div>
+                <div class="module2-txt-row5 d-flex ai-center fs-xs">
+                    <div class="circle-yellow"></div>
+                    <div class="txt">私人定制方案报价一套</div>
+                </div>
+            </div>
+            <div class="module2-form">
+                <div class="form-item">
+                    <div class="txt-input bg-white text-grey-1 d-flex ai-center">
+                        <img class="txt-input-icon" src="./assets/img/组 3@3x.png"></img>
+                        <div class="txt-input-placeholder fs-xs">请输入您的名字</div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="txt-input bg-white text-grey-1 d-flex ai-center">
+                        <img class="txt-input-icon" src="./assets/img/组 3@3x(1).png"></img>
+                        <div class="txt-input-placeholder fs-xs">请输入您的手机号码</div>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="form-item flex-1">
+                        <div class="txt-input bg-white text-grey-1 d-flex ai-center">
+                            <img class="txt-input-icon" src="./assets/img/组 3@3x(2).png"></img>
+                            <div class="txt-input-placeholder fs-xs">请输入6位短信验证码</div>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <button class="text-white bg-blue fs-sm">获取验证码</button>
+                    </div>
+                </div>
+                <div class="form-item flex-1">
+                    <button class="pink-btn text-white bg-pink fs-md ">立即免费获取</button>
+                </div>
+            </div>
+        </div>
+        <!-- end of module2 -->
+        <div class="module-3 d-flex flex-col ai-center">
+            <div class="module-title fs-xxl bold">行业类小程序/APP定制方案</div>
+            <div class="module3-context d-flex flex-col ai-center">
+                <div class="mini-pros d-flex jc-around">
+                    <div class="mini-pro" v-for="(item,i) in miniPros" :key="i">
+                        <div class="mini-pro-content d-flex flex-col ai-center">
+                            <img class="mini-pro-icon" :src="item.img"></img>
+                            <div class="mini-pro-name fs-xxxs">{{item.name}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-blue-btn bg-blue text-white d-flex ai-center jc-center bold">更多行业定制服务</div>
+            </div>
+        </div>
+        <!-- end of module3 -->
+        <div class="module-4 text-white d-flex flex-col ai-center"
+            style="background-image: url('./assets/img/矩形 1 拷贝 2@3x.png');">
+            <div class="module-title d-flex ai-center jc-center">
+                <img class="left-icon" src="./assets/img/椭圆 2@3x.png"></img>
+                <div class="module-title-txt fs-xxl">您是否有这些困扰</div>
+                <img class="right-icon" src="./assets/img/椭圆 2 拷贝@3x.png"></img>
+            </div>
+            <div class="module4-content">
+                <div class="matters d-flex flex-col jc-around">
+                    <div class="matter" v-for="(item,i) in matters">
+                        <div class="matter-content fs-xxs" style="background-image: url('./assets/img/组 89@3x.png');">
+                            {{item.q}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of module4 -->
+        <div class="module-5 d-flex flex-col ai-center">
+            <div class="module-title fs-xl bold">为什么选择我们</div>
+            <div class="servers">
+                <div class="server" v-for="(item,i) in servers" :key="i">
+                    <div class="server-content d-flex ai-center">
+                        <img class="server-icon" :src="item.icon"></img>
+                        <div class="server-txt">
+                            <div class="server-title fs-md">{{item.title}}</div>
+                            <div class="server-description fs-xxxs text-grey-1">{{item.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of module5 -->
+        <div class="module-6 bg-blue d-flex flex-col ai-center text-white">
+            <div class="module-title fs-xxl bold">项目案例</div>
+            <!-- swiper -->
+            <!-- {
+                        id: '001',
+                        img: './assets/img/iPhone@3x(1).png'
+                    },
+                    {
+                        id: '002',
+                        img: './assets/img/iPhone@3x.png'
+                    },
+                    {
+                        id: '003',
+                        img: './assets/img/iPhone@3x(2).png'
+                    } -->
+            <!-- <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./assets/img/iPhone@3x(1).png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/iPhone@3x.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/iPhone@3x(2).png">
+                    </div>
+                </div> -->
+                <!-- 如果需要分页器 -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- 如果需要导航按钮 -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div> -->
+            <div class="content-white-btn bg-white text-blue d-flex ai-center jc-center bold">立即咨询定制开发</div>
+        </div>
+        <!-- end of module6 -->
+        <div class="module-7 d-flex flex-col ai-center">
+            <div class="module-title fs-xl bold">服务流程</div>
+            <div class="module7-content">
+                <div class="server-step d-flex flex-col jc-around"
+                    style="background-image: url('./assets/img/组\ 60@3x.png');">
+                    <div class="singles d-flex jc-between">
+                        <div class="single" v-for="(item,i) in step_single" :key="i">
+                            <div class="single-content fs-xxxs">{{item.name}}</div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="doubles flex-1 d-flex jc-between">
+                        <div class="double" v-for="(item,i) in step_double" :key="i">
+                            <div class="double-content fs-xxxs">{{item.name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of module7 -->
+        <div class="module-8 bg-dark-blue text-white d-flex flex-col ai-center">
+            <div class="module-title fs-xxl bold">交付清单</div>
+            <div class="res-menu d-flex jc-around">
+                <div class="res-item" v-for="(item,i) in resMenu" :key="i">
+                    <div class="res-item-content">
+                        <img class="res-item-icon" :src="item.img" alt="">
+                        <div class="res-item-name fs-xxxs">{{item.name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-white-btn bg-white text-blue d-flex ai-center jc-center bold">立即咨询定制开发</div>
+        </div>
+        <!-- end of module8 -->
+        <div class="module-9 d-flex flex-col ai-center">
+            <div class="module-title fs-xxl bold">合作伙伴</div>
+            <div class="partners d-flex jc-around" v-if="partners">
+                <div class="partner" v-for="(item,i) in partners" :key="i">
+                    <div class="partner-content d-flex jc-center ai-center">
+                        <img :src="item.img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of module9 -->
+        <div class="footer d-flex ai-center bg-white">
+            <img class="contact-icon" src="./assets/img/组 27@3x.png"></img>
+            <div class="contact-title text-dark-blue flex-1">在线咨询</div>
+            <button class="contact-btn bg-dark-blue text-white fs-md">免费获取开发报价</button>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // swiper: new Swiper('.swiper-container', {
+                //     slidesPerView: 3,
+                //     spaceBetween: 30,
+                //     centeredSlides: true,
+                //     loop: true,
+                //     pagination: {
+                //         el: '.swiper-pagination',
+                //         clickable: true,
+                //     },
+                //     autoHeight: true,
+                //     // 如果需要前进后退按钮
+                //     navigation: {
+                //         nextEl: '.swiper-button-next',
+                //         prevEl: '.swiper-button-prev',
+                //     },
+                // }),
+                navs: [
+                    { name: '16年经验' },
+                    { name: '1对1服务' },
+                    { name: '按需定制' },
+                    { name: '高效落地' }
+                ],
+                miniPros: [
+                    {
+                        img: './assets/img/矩形 8@3x.png',
+                        name: 'AI体测'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 2@3x.png',
+                        name: 'AI测肤'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 3@3x.png',
+                        name: '社交电商'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 5@3x.png',
+                        name: '跨境电商'
+                    },
+
+                    {
+                        img: './assets/img/矩形 8@3x(1).png',
+                        name: '在线医疗'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 2@3x(1).png',
+                        name: '在线教育'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 3@3x(1).png',
+                        name: '互动直播'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 5@3x(1).png',
+                        name: '家政平台'
+                    },
+
+                    {
+                        img: './assets/img/矩形 8@3x(2).png',
+                        name: '租房平台'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 2@3x(2).png',
+                        name: '本地生活'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 3@3x(2).png',
+                        name: '智能家居'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 5@3x(2).png',
+                        name: '宠物在线'
+                    },
+
+                    {
+                        img: './assets/img/矩形 8@3x(3).png',
+                        name: '美业连锁'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 2@3x(3).png',
+                        name: '生鲜团购'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 3@3x(3).png',
+                        name: '识图APP'
+                    },
+                    {
+                        img: './assets/img/矩形 8 拷贝 5@3x(3).png',
+                        name: '更多功能'
+                    },
+                ],
+                matters: [
+                    { q: '想定制一款APP，但是不知道怎么选择开发外包公司？' },
+                    { q: '做一款小程序或APP需要多少钱，如何报价才算合理?' },
+                    { q: '担心售后差？甚至没有售后服务？' },
+                    { q: '开发周期长？效率慢、影响正常使用？' }
+                ],
+                servers: [
+                    {
+                        icon: './assets/img/组 89@3x(1).png',
+                        title: '量身设计',
+                        description: '功能设计+终端设计+技术架构设计+运营方案设计，四位一体全周期服务'
+                    },
+                    {
+                        icon: './assets/img/组 89@3x(2).png',
+                        title: '技术沉淀',
+                        description: '16年行业经验，10000+企业用户见证SAAS级标准功能自由组合，更快落地'
+                    },
+                    {
+                        icon: './assets/img/组 89@3x(3).png',
+                        title: '安全可靠',
+                        description: '腾讯云战略合作，运行环境实时监控数据运行安全稳定'
+                    }
+                ],
+                swipers: [
+                    {
+                        id: '001',
+                        img: './assets/img/iPhone@3x(1).png'
+                    },
+                    {
+                        id: '002',
+                        img: './assets/img/iPhone@3x.png'
+                    },
+                    {
+                        id: '003',
+                        img: './assets/img/iPhone@3x(2).png'
+                    }
+                ],
+                resMenu: [
+                    {
+                        img: './assets/img/矩形 820@3x.png',
+                        name: '源代码',
+                    },
+                    {
+                        img: './assets/img/组 86@3x.png',
+                        name: '操作文档',
+                    },
+                    {
+                        img: './assets/img/矩形 820 拷贝 2@3x.png',
+                        name: '产品原型',
+                    },
+                    {
+                        img: './assets/img/矩形 820 拷贝 2@3x(1).png',
+                        name: 'UI效果图',
+                    },
+                    {
+                        img: './assets/img/矩形 820 拷贝 3@3x.png',
+                        name: '技术部署',
+                    }
+                ],
+                partners: [
+                    { img: './assets/img/矩形 32 拷贝 3@3x.png' },
+                    { img: './assets/img/img1.png' },
+                    { img: './assets/img/矩形 32 拷贝 3@3x(2).png' },
+
+                    { img: './assets/img/img2.png' },
+                    { img: './assets/img/矩形 32 拷贝 6@3x(1).png' },
+                    { img: './assets/img/矩形 32 拷贝 6@3x(2).png' },
+
+                    { img: './assets/img/矩形 32 拷贝 7@3x.png' },
+                    { img: './assets/img/img3.png' },
+                    { img: './assets/img/img4.png' },
+                ],
+                steps: [
+                    { name: '沟通需求' },
+                    { name: '制定方案' },
+                    { name: '项目报价' },
+                    { name: '签订合同' },
+                    { name: '项目启动' },
+                ]
+
+            },
+            computed: {
+                step_single() {
+                    let single = []
+                    for (let i = 0; i < this.steps.length; i++) {
+                        if (i % 2 != 0) single.push(this.steps[i])
+                    }
+                    return single;
+                },
+                step_double() {
+                    let double = []
+                    for (let i = 0; i < this.steps.length; i++) {
+                        if (i % 2 == 0) double.push(this.steps[i])
+                    }
+                    return double;
+                }
+            },
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>
